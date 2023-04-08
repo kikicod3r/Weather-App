@@ -1,0 +1,81 @@
+h1 {
+  padding: 50px;
+  text-align: center;
+}
+.container {
+  background: radial-gradient(
+    circle at 0.4% -0.6%,
+    rgb(143, 170, 210) 0%,
+    rgb(255, 177, 177) 90%
+  );
+}
+
+.search-button {
+  border: none;
+  background: rgb(143, 170, 210);
+  color: white;
+  padding: 7px;
+  font-weight: bold;
+}
+
+#current-city-button {
+  border: none;
+  color: black;
+  background: rgb(143, 170, 210);
+  padding: 7px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+.current-temperature {
+  text-align: left;
+}
+#degrees-fahrenheit {
+  text-decoration: none;
+}
+#degrees-celcius {
+  text-decoration: none;
+}
+.current-day {
+  text-align: left;
+}
+.current-time {
+  text-align: left;
+  font-size: 25px;
+  font-weight: bold;
+}
+.current-time-display {
+  display: inline;
+  text-align: left;
+}
+.current-city {
+  text-align: left;
+}
+.current-city-main {
+  font-size: 25px;
+  font-weight: bold;
+}
+.current-temperature {
+  font-size: 25px;
+}
+.weekday {
+  font-size: 25px;
+}
+.temperature {
+  font-size: 25px;
+}
+.sunny {
+  color: #ffe981;
+  font-size: 30px;
+}
+.cloudy {
+  color: #606470;
+  font-size: 30px;
+}
+.snow {
+  color: #65daf7;
+  font-size: 30px;
+}
+.thermostat {
+  color: #65daf7;
+  font-size: 30px;
+}
