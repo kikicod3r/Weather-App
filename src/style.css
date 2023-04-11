@@ -35,9 +35,14 @@ form {
 }
 #degrees-fahrenheit {
   text-decoration: none;
+  font-size: 20px;
+}
+.fahreneheit-celcius-line {
+  font-size: 20px;
 }
 #degrees-celcius {
   text-decoration: none;
+  font-size: 20px;
 }
 .current-day {
   text-align: left;
@@ -45,7 +50,7 @@ form {
 .current-time {
   text-align: left;
   font-size: 25px;
-  font-weight: bold;
+  font-weight: lighter;
 }
 .current-time-display {
   display: inline;
@@ -54,12 +59,23 @@ form {
 .current-city {
   text-align: left;
 }
+#current-city-display {
+  font-size: 40px;
+}
 .current-city-main {
   font-size: 25px;
   font-weight: bold;
 }
 .current-temperature {
+  font-size: 40px;
+}
+.last-updated {
   font-size: 25px;
+  font-weight: lighter;
+}
+.current-day {
+  display: inline;
+  font-weight: lighter;
 }
 .weekday {
   font-size: 25px;
