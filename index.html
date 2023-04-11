@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Weather</h1>
+    <div class="weather-app-content">
+      <h1>Weather Forecast</h1>
       <form id="search-form">
         <input
           type="text"
@@ -32,66 +32,67 @@
         <button id="current-city-button">Current City</button>
       </form>
       <br />
-      <div class="text-center">
+      <div class="container">
         <div class="row">
-          <div class="col-8-sm current-city-main current-temperature">
-            <span id="current-temperature-display"> 47° </span>
-            <a href="null" id="degrees-fahrenheit"> F </a> |
-            <a href="null" id="degrees-celcius"> C </a>
-          </div>
-          <div class="col-6-sm current-city-main">
-            <i class="fa-solid fa-sun sunny"></i>
-          </div>
-          <div
-            class="col-6-sm current-city-main"
-            id="current-weather-description"
-          >
-            Sunny
-          </div>
-          <div
-            class="col-12-sm current-city-main current-day"
-            id="current-day-display"
-          >
-            Saturday
-          </div>
-          <span
-            class="curcol-12-sm rent-time current-time"
-            id="current-time-display"
-            >16:00</span
-          >
-          <div
-            class="col current-city-main current-city"
-            id="current-city-display"
-          >
-            Chicago
+          <div class="text-center">
+            <div class="col-8-sm current-city-main current-temperature">
+              <span id="current-temperature-display"> 47° </span>
+              <a href="null" id="degrees-fahrenheit"> F </a> |
+              <a href="null" id="degrees-celcius"> C </a>
+            </div>
+            <div
+              class="col-6-sm current-city-main current-city"
+              id="current-city-display"
+            >
+              Chicago
+            </div>
+            <div class="col-8-sm current-city-main">
+              <i class="fa-solid fa-sun sunny"></i>
+            </div>
+            <div
+              class="col-8-sm current-city-main"
+              id="current-weather-description"
+            >
+              Sunny
+            </div>
           </div>
         </div>
-        <br />
-        <br />
-        <div class="text-center">
-          <div class="row row-cols-5">
-            <div class="col weekday">Day 1</div>
-            <div class="col weekday">Day 2</div>
-            <div class="col weekday">Day 3</div>
-            <div class="col weekday">Day 4</div>
-            <div class="col weekday">Day 5</div>
-            <div class="col"><i class="fa-solid fa-sun sunny"></i></div>
-            <div class="col"><i class="fa-solid fa-cloud cloudy"></i></div>
-            <div class="col"><i class="fa-solid fa-snowflake snow"></i></div>
-            <div class="col"><i class="fa-solid fa-snowflake snow"></i></div>
-            <div class="col">
-              <i class="fa-solid fa-temperature-low thermostat"></i>
-            </div>
-            <div class="col temperature">40°</div>
-            <div class="col temperature">40°</div>
-            <div class="col temperature">40°</div>
-            <div class="col temperature">40°</div>
-            <div class="col temperature">40°</div>
+
+        <div
+          class="col-12-sm current-city-main current-day"
+          id="current-day-display"
+        >
+          Saturday
+        </div>
+        <span class="col-12-sm rent-time current-time" id="current-time-display"
+          >16:00</span
+        >
+      </div>
+      <br />
+      <br />
+      <div class="text-center">
+        <div class="row row-cols-5">
+          <div class="col weekday">Day 1</div>
+          <div class="col weekday">Day 2</div>
+          <div class="col weekday">Day 3</div>
+          <div class="col weekday">Day 4</div>
+          <div class="col weekday">Day 5</div>
+          <div class="col"><i class="fa-solid fa-sun sunny"></i></div>
+          <div class="col"><i class="fa-solid fa-cloud cloudy"></i></div>
+          <div class="col"><i class="fa-solid fa-snowflake snow"></i></div>
+          <div class="col"><i class="fa-solid fa-snowflake snow"></i></div>
+          <div class="col">
+            <i class="fa-solid fa-temperature-low thermostat"></i>
           </div>
+          <div class="col temperature">40°</div>
+          <div class="col temperature">40°</div>
+          <div class="col temperature">40°</div>
+          <div class="col temperature">40°</div>
+          <div class="col temperature">40°</div>
         </div>
       </div>
-      <script src="src/javascript.js"></script>
     </div>
+    <script src="src/javascript.js"></script>
     <footer>
       <a href="https://github.com/kikicod3r/Weather-App" target="_blank">
         Open-source code</a

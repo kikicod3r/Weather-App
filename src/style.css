@@ -2,14 +2,18 @@ h1 {
   padding: 50px;
   text-align: center;
 }
-.container {
+.weather-app-content {
   background: radial-gradient(
     circle at 0.4% -0.6%,
     rgb(143, 170, 210) 0%,
     rgb(255, 177, 177) 90%
   );
+  margin: 150px;
 }
 
+form {
+  text-align: center;
+}
 .search-button {
   border: none;
   background: rgb(143, 170, 210);
