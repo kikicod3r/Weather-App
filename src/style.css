@@ -9,10 +9,15 @@ h1 {
     rgb(255, 177, 177) 90%
   );
   margin: 150px;
+  border: 2px solid;
+  border-radius: 15px;
 }
 
 form {
   text-align: center;
+}
+#search-form {
+  border-radius: 7px;
 }
 .search-button {
   border: none;
@@ -44,12 +49,19 @@ form {
   text-decoration: none;
   font-size: 20px;
 }
-.current-day {
-  text-align: left;
-}
 .current-time {
   text-align: left;
   font-size: 25px;
+  font-weight: lighter;
+}
+.last-updated {
+  font-size: 25px;
+  font-weight: lighter;
+  text-align: left;
+}
+.current-day {
+  font-size: 25px;
+  display: inline;
   font-weight: lighter;
 }
 .current-time-display {
@@ -69,13 +81,9 @@ form {
 .current-temperature {
   font-size: 40px;
 }
-.last-updated {
-  font-size: 25px;
-  font-weight: lighter;
-}
-.current-day {
-  display: inline;
-  font-weight: lighter;
+
+#current-weather-description {
+  font-size: 40px;
 }
 .weekday {
   font-size: 25px;
