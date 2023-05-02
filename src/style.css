@@ -8,9 +8,11 @@ h1 {
     rgb(143, 170, 210) 0%,
     rgb(255, 177, 177) 90%
   );
+  max-width: 850px;
   margin: 150px;
   border: 2px solid;
   border-radius: 15px;
+  font-family: "Lato", sans-serif;
 }
 
 form {
@@ -51,18 +53,18 @@ form {
 }
 .current-time {
   text-align: left;
-  font-size: 25px;
-  font-weight: lighter;
+  font-size: 20px;
+  font-weight: light;
 }
 .last-updated {
-  font-size: 25px;
-  font-weight: lighter;
+  font-size: 20px;
+  font-weight: light;
   text-align: left;
 }
 .current-day {
-  font-size: 25px;
+  font-size: 20px;
   display: inline;
-  font-weight: lighter;
+  font-weight: light;
 }
 .current-time-display {
   display: inline;
