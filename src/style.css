@@ -22,21 +22,21 @@ form {
   border-radius: 7px;
 }
 .search-button {
-  border: none;
   background: rgb(143, 170, 210);
   color: white;
   padding: 9px;
   margin-left: 10px;
   border-radius: 7px;
+  font-size: 16px;
 }
 
 #current-city-button {
-  border: none;
   color: black;
   background: rgb(143, 170, 210);
   padding: 9px;
   margin-left: 10px;
   border-radius: 7px;
+  font-size: 16px;
 }
 .current-temperature {
   text-align: left;
