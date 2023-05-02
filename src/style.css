@@ -25,17 +25,18 @@ form {
   border: none;
   background: rgb(143, 170, 210);
   color: white;
-  padding: 7px;
-  font-weight: bold;
+  padding: 9px;
+  margin-left: 10px;
+  border-radius: 7px;
 }
 
 #current-city-button {
   border: none;
   color: black;
   background: rgb(143, 170, 210);
-  padding: 7px;
+  padding: 9px;
   margin-left: 10px;
-  font-weight: bold;
+  border-radius: 7px;
 }
 .current-temperature {
   text-align: left;
