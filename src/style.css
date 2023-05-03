@@ -78,7 +78,7 @@ li {
   text-align: left;
 }
 #current-city-display {
-  font-size: 40px;
+  font-size: 35px;
 }
 .current-city-main {
   font-size: 25px;
@@ -89,7 +89,8 @@ li {
 }
 
 #current-weather-description {
-  font-size: 40px;
+  font-size: 30px;
+  font-style: italic;
 }
 .weekday {
   font-size: 25px;
