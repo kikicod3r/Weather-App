@@ -77,7 +77,11 @@ function showTemperature(response) {
 
   let temperature = Math.round(response.data.main.temp);
 
-  currentTemperature.innerHTML = `${temperature}°`;
+  currentTemperature.innerHTML = `${temperature}`;
+
+  let currentWeatherDescription = document.querySelector(
+    "#current-weather-description"
+  );
   document.querySelector("#current-weather-description").innerHTML =
     response.data.weather[0].main;
 }
