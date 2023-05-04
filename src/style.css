@@ -8,8 +8,8 @@ h1 {
     rgb(143, 170, 210) 0%,
     rgb(255, 177, 177) 90%
   );
-  max-width: 700px;
-  margin: 150px;
+  max-width: 750px;
+  margin: 150px auto auto auto;
   border: 2px solid;
   border-radius: 15px;
   font-family: "Lato", sans-serif;
