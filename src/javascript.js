@@ -48,12 +48,15 @@ let degreesCelcius = document.querySelector("#degrees-celcius");
 degreesCelcius.addEventListener("click", clickCelcius);
 
 function showCurrentCityWeather(response) {
+  console.log(response.data);
   document.querySelector("#current-city-display").innerHTML =
     response.data.name;
 
   document.querySelector("#current-temperature-display").innerHTML = Math.round(
     response.data.main.temp
   );
+  document.querySelector("#current-weather-description").innerHTML =
+    response.data.weather[0].description;
 }
 
 function searchBox(event) {
@@ -78,12 +81,6 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
 
   currentTemperature.innerHTML = `${temperature}`;
-
-  let currentWeatherDescription = document.querySelector(
-    "#current-weather-description"
-  );
-  document.querySelector("#current-weather-description").innerHTML =
-    response.data.weather[0].main;
 }
 
 function getCityLocation(event) {

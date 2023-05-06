@@ -92,6 +92,7 @@ li {
 #current-weather-description {
   font-size: 30px;
   font-style: italic;
+  text-transform: capitalize;
 }
 .weekday {
   font-size: 25px;
