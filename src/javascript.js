@@ -48,7 +48,6 @@ let degreesCelcius = document.querySelector("#degrees-celcius");
 degreesCelcius.addEventListener("click", clickCelcius);
 
 function showCurrentCityWeather(response) {
-  console.log(response.data);
   document.querySelector("#current-city-display").innerHTML =
     response.data.name;
 
@@ -57,6 +56,11 @@ function showCurrentCityWeather(response) {
   );
   document.querySelector("#current-weather-description").innerHTML =
     response.data.weather[0].description;
+  document.querySelector("#current-humidity").innerHTML =
+    response.data.main.humidity;
+  document.querySelector("#current-wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 }
 
 function searchBox(event) {

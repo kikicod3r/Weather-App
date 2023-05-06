@@ -90,7 +90,7 @@ li {
 }
 
 #current-weather-description {
-  font-size: 30px;
+  font-size: 25px;
   font-style: italic;
   text-transform: capitalize;
 }
