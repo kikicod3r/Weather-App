@@ -83,6 +83,7 @@ li {
   text-align: left;
   font-size: 30px;
   font-weight: bold;
+  padding-top: 30px;
 }
 
 .current-temperature {
