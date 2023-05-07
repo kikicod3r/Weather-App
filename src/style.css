@@ -23,6 +23,7 @@ form {
 }
 #search-form {
   border-radius: 7px;
+  padding-left: 50px;
 }
 .search-button {
   background: rgb(143, 170, 210);
