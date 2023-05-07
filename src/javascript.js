@@ -69,19 +69,25 @@ function showCurrentCityWeather(response) {
   );
 }
 
-function searchBox(event) {
-  event.preventDefault();
-
-  let currentCity = document.querySelector("#city-search-box").value;
+function defaultCity(city) {
   let units = "imperial";
   let apiKey = "8cac06f7ab6c10287cd06a316ff84a57";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(showCurrentCityWeather);
 }
 
-let submittedSearch = document.querySelector("#search-form");
-submittedSearch.addEventListener("submit", searchBox);
+function searchBox(event) {
+  event.preventDefault();
+
+  let submittedSearch = document.querySelector("#search-form");
+  submittedSearch.addEventListener("submit", searchBox);
+
+  let citySearchEntry = document.querySelector("#city-search-box");
+  search(citySearchEntry.value);
+}
+
+defaultCity("Chicago");
 
 function showTemperature(response) {
   let currentTemperature = document.querySelector(
