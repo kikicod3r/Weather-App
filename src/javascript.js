@@ -80,12 +80,13 @@ function defaultCity(city) {
 function searchBox(event) {
   event.preventDefault();
 
-  let submittedSearch = document.querySelector("#search-form");
-  submittedSearch.addEventListener("submit", searchBox);
-
   let citySearchEntry = document.querySelector("#city-search-box");
-  search(citySearchEntry.value);
+  defaultCity(citySearchEntry.value);
 }
+
+let submittedSearch = document.querySelector("#search-form");
+
+submittedSearch.addEventListener("submit", searchBox);
 
 defaultCity("Chicago");
 
