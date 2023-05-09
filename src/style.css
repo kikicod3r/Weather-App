@@ -50,16 +50,9 @@ li {
   text-align: left;
   font-weight: bold;
 }
-#degrees-fahrenheit {
+.degrees-fahrenheit {
   text-decoration: none;
-  font-size: 15px;
-}
-.fahreneheit-celcius-line {
-  font-size: 15px;
-}
-#degrees-celcius {
-  text-decoration: none;
-  font-size: 15px;
+  font-size: 18px;
 }
 .current-time {
   text-align: left;

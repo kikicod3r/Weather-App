@@ -27,30 +27,6 @@ currentDayDisplay.innerHTML = `${day}`;
 let currentTimeDisplay = document.querySelector("#current-time-display");
 currentTimeDisplay.innerHTML = `${hours}:${minutes}`;
 
-function clickFahrenheit(event) {
-  event.preventDefault();
-
-  let degreesFahrenheit = document.querySelector(
-    "#current-temperature-display"
-  );
-
-  degreesFahrenheit.innerHTML = "50°";
-}
-let degreesFah = document.querySelector("#degrees-fahrenheit");
-degreesFah.addEventListener("click", clickFahrenheit);
-
-function clickCelcius(event) {
-  event.preventDefault();
-
-  let celciusTemperature = document.querySelector(
-    "#current-temperature-display"
-  );
-  let degreesCelcius = ((57 - 32) * 5) / 9;
-  celciusTemperature.innerHTML = Math.round(degreesCelcius);
-}
-let degreesCelcius = document.querySelector("#degrees-celcius");
-degreesCelcius.addEventListener("click", clickCelcius);
-
 function showCurrentCityWeather(response) {
   document.querySelector("#current-city-display").innerHTML =
     response.data.name;
@@ -80,6 +56,7 @@ function defaultCity(city) {
 
   axios.get(apiUrl).then(showCurrentCityWeather);
 }
+defaultCity("Chicago");
 
 function searchBox(event) {
   event.preventDefault();
@@ -91,8 +68,6 @@ function searchBox(event) {
 let submittedSearch = document.querySelector("#search-form");
 
 submittedSearch.addEventListener("submit", searchBox);
-
-defaultCity("Chicago");
 
 function showTemperature(response) {
   let currentTemperature = document.querySelector(
