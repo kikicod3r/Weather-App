@@ -29,7 +29,6 @@ form {
   background: rgb(143, 170, 210);
   color: white;
   padding: 9px;
-  margin-left: 10px;
   border-radius: 7px;
   font-size: 16px;
 }
@@ -38,7 +37,6 @@ form {
   color: black;
   background: rgb(143, 170, 210);
   padding: 9px;
-  margin-left: 10px;
   border-radius: 7px;
   font-size: 16px;
 }
