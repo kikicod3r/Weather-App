@@ -33,6 +33,7 @@ function clickFahrenheit(event) {
   let degreesFahrenheit = document.querySelector(
     "#current-temperature-display"
   );
+
   degreesFahrenheit.innerHTML = "50°";
 }
 let degreesFah = document.querySelector("#degrees-fahrenheit");
@@ -41,8 +42,11 @@ degreesFah.addEventListener("click", clickFahrenheit);
 function clickCelcius(event) {
   event.preventDefault();
 
-  let degreesCelcius = document.querySelector("#current-temperature-display");
-  degreesCelcius.innerHTML = "10°";
+  let celciusTemperature = document.querySelector(
+    "#current-temperature-display"
+  );
+  let degreesCelcius = ((57 - 32) * 5) / 9;
+  celciusTemperature.innerHTML = Math.round(degreesCelcius);
 }
 let degreesCelcius = document.querySelector("#degrees-celcius");
 degreesCelcius.addEventListener("click", clickCelcius);
