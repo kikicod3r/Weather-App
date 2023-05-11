@@ -15,6 +15,7 @@ h1 {
   margin: 150px auto auto auto;
   border: 2px solid;
   border-radius: 15px;
+  padding-bottom: 10px;
   font-family: "Lato", sans-serif;
 }
 
@@ -88,28 +89,28 @@ li {
   text-transform: capitalize;
 }
 .weekday {
-  font-size: 25px;
+  font-size: 20px;
 }
 .temperature {
-  font-size: 25px;
+  font-size: 20px;
 }
 .sunny {
   color: #ffe981;
-  font-size: 30px;
+  font-size: 20px;
 }
 .cloudy {
   color: #606470;
-  font-size: 30px;
+  font-size: 20px;
 }
 .snow {
   color: #65daf7;
-  font-size: 30px;
+  font-size: 20px;
 }
 .thermostat {
   color: #65daf7;
-  font-size: 30px;
+  font-size: 20px;
 }
 footer {
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
 }
