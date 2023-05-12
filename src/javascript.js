@@ -51,7 +51,6 @@ function showForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
 function getForecast(coordinates) {
   console.log(coordinates);
 
@@ -62,7 +61,6 @@ function getForecast(coordinates) {
   console.log(apiUrl);
   axios.get(apiUrl).then(showForecast);
 }
-
 function showCurrentCityWeather(response) {
   document.querySelector("#current-city-display").innerHTML =
     response.data.name;
