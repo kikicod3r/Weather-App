@@ -27,6 +27,42 @@ currentDayDisplay.innerHTML = `${day}`;
 let currentTimeDisplay = document.querySelector("#current-time-display");
 currentTimeDisplay.innerHTML = `${hours}:${minutes}`;
 
+function showForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#weather-forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col-2">
+            <div class="weather-forcast-date">${day}</div>
+            <img src="" alt="Icon" />
+            <div class="weather-forecast-temperatures">
+              <span class="weather-forecast-temperature-high"> 75°</span>
+              <span class="weather-forecast-temperature-low">56°</span>
+            </div>
+          </div>
+        `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+
+  let apiKey = "a710bd8bd76400c9658ef649d9e81728";
+  let latitude = coordinates.lat;
+  let longitude = coordinates.lon;
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude={part}&appid=${apiKey}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
+}
+
 function showCurrentCityWeather(response) {
   document.querySelector("#current-city-display").innerHTML =
     response.data.name;
@@ -47,11 +83,13 @@ function showCurrentCityWeather(response) {
   document.querySelector("#current-wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+
+  getForecast(response.data.coord);
 }
 
 function defaultCity(city) {
   let units = "imperial";
-  let apiKey = "8cac06f7ab6c10287cd06a316ff84a57";
+  let apiKey = "a710bd8bd76400c9658ef649d9e81728";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(showCurrentCityWeather);
