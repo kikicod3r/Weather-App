@@ -57,10 +57,11 @@ function getForecast(coordinates) {
   let apiKey = "a710bd8bd76400c9658ef649d9e81728";
   let latitude = coordinates.lat;
   let longitude = coordinates.lon;
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude={part}&appid=${apiKey}`;
-  console.log(apiUrl);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude={part}&appid=${apiKey}&units=imperial`;
+
   axios.get(apiUrl).then(showForecast);
 }
+
 function showCurrentCityWeather(response) {
   document.querySelector("#current-city-display").innerHTML =
     response.data.name;
