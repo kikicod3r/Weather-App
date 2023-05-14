@@ -19,8 +19,8 @@ let days = [
   "Friday",
   "Saturday",
 ];
-let day = days[now.getDay()];
 
+let day = days[now.getDay()];
 let currentDayDisplay = document.querySelector("#current-day-display");
 currentDayDisplay.innerHTML = `${day}`;
 
@@ -28,38 +28,72 @@ let currentTimeDisplay = document.querySelector("#current-time-display");
 currentTimeDisplay.innerHTML = `${hours}:${minutes}`;
 
 function showForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
 
   let forecastHTML = `<div class="row">`;
 
   let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      ` <div class="col-2">
-            <div class="weather-forcast-date">${day}</div>
-            <img src="" alt="Icon" />
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        ` <div class="col-2">
+            <div class="weather-forcast-date">${formatDate(
+              forecastDay.dt
+            )}</div>
+            <img src="https://openweathermap.org/img/wn/${
+              forecast.weather[0].icon
+            }@2x.png" alt="Icon" />
             <div class="weather-forecast-temperatures">
-              <span class="weather-forecast-temperature-high"> 75°</span>
-              <span class="weather-forecast-temperature-low">56°</span>
+              <span class="weather-forecast-temperature-high"> ${Math.round(
+                forecastDay.temp.max
+              )}</span>
+              <span class="weather-forecast-temperature-low">${Math.round(
+                forecastDay.temp.min
+              )}</span>
             </div>
           </div>
         `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 function getForecast(coordinates) {
-  console.log(coordinates);
-
   let apiKey = "a710bd8bd76400c9658ef649d9e81728";
   let latitude = coordinates.lat;
   let longitude = coordinates.lon;
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude={part}&appid=${apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(showForecast);
+}
+
+function showTemperature(response) {
+  let currentTemperature = document.querySelector(
+    "#current-temperature-display"
+  );
+
+  let temperature = Math.round(response.data.main.temp);
+
+  currentTemperature.innerHTML = `${temperature}`;
+}
+getForecast(response.data.coord);
+
+function defaultCity(city) {
+  let units = "imperial";
+  let apiKey = "a710bd8bd76400c9658ef649d9e81728";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(showCurrentCityWeather);
+}
+
+function formatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  return days[day];
 }
 
 function showCurrentCityWeather(response) {
@@ -82,18 +116,7 @@ function showCurrentCityWeather(response) {
   document.querySelector("#current-wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-
-  getForecast(response.data.coord);
 }
-
-function defaultCity(city) {
-  let units = "imperial";
-  let apiKey = "a710bd8bd76400c9658ef649d9e81728";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(showCurrentCityWeather);
-}
-defaultCity("Chicago");
 
 function searchBox(event) {
   event.preventDefault();
@@ -105,16 +128,6 @@ function searchBox(event) {
 let submittedSearch = document.querySelector("#search-form");
 
 submittedSearch.addEventListener("submit", searchBox);
-
-function showTemperature(response) {
-  let currentTemperature = document.querySelector(
-    "#current-temperature-display"
-  );
-
-  let temperature = Math.round(response.data.main.temp);
-
-  currentTemperature.innerHTML = `${temperature}`;
-}
 
 function getCityLocation(event) {
   event.preventDefault();
@@ -133,3 +146,5 @@ function searchLocation(position) {
 let currentCityButton = document.querySelector("button");
 
 currentCityButton.addEventListener("click", getCityLocation);
+
+defaultCity("Chicago");
