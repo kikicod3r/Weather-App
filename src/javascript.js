@@ -43,15 +43,15 @@ function showForecast(response) {
               forecastDay.dt
             )}</div>
             <img src="https://openweathermap.org/img/wn/${
-              forecast.weather[0].icon
+              forecastDay.weather[0].icon
             }@2x.png" alt="Icon" />
             <div class="weather-forecast-temperatures">
               <span class="weather-forecast-temperature-high"> ${Math.round(
                 forecastDay.temp.max
-              )}</span>
+              )}° |</span>
               <span class="weather-forecast-temperature-low">${Math.round(
                 forecastDay.temp.min
-              )}</span>
+              )}°</span>
             </div>
           </div>
         `;
@@ -79,7 +79,6 @@ function showTemperature(response) {
 
   currentTemperature.innerHTML = `${temperature}`;
 }
-getForecast(response.data.coord);
 
 function defaultCity(city) {
   let units = "imperial";
@@ -116,6 +115,8 @@ function showCurrentCityWeather(response) {
   document.querySelector("#current-wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+
+  getForecast(response.data.coord);
 }
 
 function searchBox(event) {
